@@ -23,4 +23,13 @@ describe Oystercard do
       expect { subject.top_up 1}.to raise_error "The limit of #{max_balance} is exceeded."
     end
   end
+
+  describe "#deduct" do
+    it "deducts money from the balance" do
+      card = Oystercard.new
+      subject.top_up(50)
+      subject.deduct(20)
+      expect(subject.balance). to eq 30
+    end
+  end
 end
