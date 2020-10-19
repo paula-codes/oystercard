@@ -32,4 +32,11 @@ describe Oystercard do
       expect(subject.balance). to eq 30
     end
   end
+
+  describe "#touch_in" do
+    it "taps you in for a journey" do
+      card = Oystercard.new
+      expect(subject.touch_in).to eq true
+    end
+  end
 end
